@@ -1,0 +1,77 @@
+<main>
+  <section *ngIf="menu == true">
+    <nav class="navLeft">
+      <section class="logo">
+        <img
+        src="../assets/icons/mosquito.png"
+        alt=""
+        />
+        <p>Combat Leish</p>
+        <div class="abrir" (click)="fecharMenu()">
+          <img
+          src="../assets/icons/menu-aberto.png"
+          alt=""
+          />
+        </div>
+      </section>
+
+      <section class="options">
+        <ul>
+          <li><img src="../assets/icons/dashboard.png" alt="" /> Dashboard</li>
+          <li><img src="../assets/icons/user.png" alt="" /> Agente</li>
+          <li><img src="../assets/icons/radar.png" alt="" /> Área</li>
+          <li><img src="../assets/icons/grafico-de-pizza.png" alt="" /> Setor</li>
+          <li><img src="../assets/icons/estrada.png" alt="" /> Quarteirão</li>
+          <li>
+            <img src="../assets/icons/analise-de-dados.png" alt="" /> Relatórios
+            <div (click)="expandir()" class="expandir" *ngIf="ex == false">
+              <img
+              src="../assets/icons/next.png"
+              alt=""
+              />
+            </div>
+            <div (click)="fechar()" class="expandir" *ngIf="ex == true">
+              <img
+              src="../assets/icons/down-arrow.png"
+              alt=""
+              />
+            </div>
+          </li>
+          <li *ngIf="ex == true" class="boletim">
+            <img src="../assets/icons/boletim-de-noticias.png" alt="" /> Boletim
+          </li>
+          <li>
+            <img src="../assets/icons/feedback-do-cliente.png" alt="" /> Feedback
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    <section class="logout">
+      <span class="txtLogout">
+        <img
+        src="../assets/icons/sair.png"
+        alt=""
+        />
+        Sair</span>
+    </section>
+  </section>
+
+  <section *ngIf="menu == false">
+    <nav class="navLeft">
+      <section class="logo">
+        <img
+        src="../assets/icons/mosquito.png"
+        alt=""
+        />
+        <p>Combat Leish</p>
+        <div class="abrir" (click)="abrirMenu()">
+          <img
+          src="../assets/icons/cardapio.png"
+          alt=""
+          />
+        </div>
+      </section>
+    </nav>
+  </section>
+</main>
