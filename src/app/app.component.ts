@@ -44,7 +44,6 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    // Criar uma instância de gráfico com os padrões
     this.chart = new ApexCharts(document.querySelector('#chart'), {
       ...this.apexDefaults,
       series: [{
