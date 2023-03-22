@@ -1,4 +1,4 @@
-<main>
+<main class="teste">
   <section *ngIf="menu == true">
     <nav class="navLeft">
       <section class="logo">
@@ -55,6 +55,11 @@
         />
         Sair</span>
     </section>
+
+    <section class="modoNL">
+        <input type="checkbox" class="modo" (change)="mudarCor($event)">
+    </section>
+
   </section>
 
   <section *ngIf="menu == false">
@@ -74,4 +79,7 @@
       </section>
     </nav>
   </section>
+
+  <!-- <div id="chart"></div> -->
+
 </main>
