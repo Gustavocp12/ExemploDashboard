@@ -1,19 +1,31 @@
-<main class="teste">
-  <section *ngIf="menu == true">
-    <nav class="navLeft">
+<main>
+  <section>
+
+    <nav class="navBar">
       <section class="logo">
         <img
         src="../assets/icons/mosquito.png"
         alt=""
         />
         <p>Combat Leish</p>
-        <div class="abrir" (click)="fecharMenu()">
+      </section>
+
+      <section class="modoNL">
+        <img src="../assets/icons/modo-noturno.png" alt="" *ngIf="modo == true" (click)="modoNoturno(); mudarCor();">
+        <img src="../assets/icons/brilho.png" alt="" *ngIf="modo == false" (click)="modoDiurno(); mudarCor();">
+      </section>
+
+      <section class="logout">
+        <span class="txtLogout">
           <img
-          src="../assets/icons/menu-aberto.png"
+          src="../assets/icons/sair.png"
           alt=""
           />
-        </div>
+          Sair</span>
       </section>
+    </nav>
+
+    <nav class="navLeft">
 
       <section class="options">
         <ul>
@@ -47,37 +59,6 @@
       </section>
     </nav>
 
-    <section class="logout">
-      <span class="txtLogout">
-        <img
-        src="../assets/icons/sair.png"
-        alt=""
-        />
-        Sair</span>
-    </section>
-
-    <section class="modoNL">
-        <input type="checkbox" class="modo" (change)="mudarCor($event)">
-    </section>
-
-  </section>
-
-  <section *ngIf="menu == false">
-    <nav class="navLeft">
-      <section class="logo">
-        <img
-        src="../assets/icons/mosquito.png"
-        alt=""
-        />
-        <p>Combat Leish</p>
-        <div class="abrir" (click)="abrirMenu()">
-          <img
-          src="../assets/icons/cardapio.png"
-          alt=""
-          />
-        </div>
-      </section>
-    </nav>
   </section>
 
   <!-- <div id="chart"></div> -->

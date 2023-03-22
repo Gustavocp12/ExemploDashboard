@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   title = 'DashboardIniciacao';
 
   ex = false;
-  menu = true;
+  modo = true;
 
   apexDefaults = {
     chart: {
@@ -32,13 +32,12 @@ export class AppComponent implements OnInit {
 
   chart: ApexCharts | undefined;
 
-  mudarCor(event: any){
-    const checkbox = event.target;
+  mudarCor(){
     const main = document.querySelector('main') as HTMLElement;
-    if (checkbox.checked) {
-      main.style.backgroundColor = '#262626';
+    if (this.modo == false) {
+      main.style.backgroundColor = '#000000';
     } else {
-      main.style.backgroundColor = '#FBF7F4';
+      main.style.backgroundColor = '#F5F5F9';
     }
   }
 
@@ -66,11 +65,12 @@ export class AppComponent implements OnInit {
     this.ex = false;
   }
 
-  abrirMenu(){
-    this.menu = true;
+  modoNoturno(){
+    this.modo = false;
   }
 
-  fecharMenu(){
-    this.menu = false;
+  modoDiurno(){
+    this.modo = true;
   }
+
 }
