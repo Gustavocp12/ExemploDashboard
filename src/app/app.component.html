@@ -34,15 +34,18 @@
           <li><img src="../assets/icons/radar.png" alt="" /> Área</li>
           <li><img src="../assets/icons/grafico-de-pizza.png" alt="" /> Setor</li>
           <li><img src="../assets/icons/estrada.png" alt="" /> Quarteirão</li>
-          <li>
+          <li (click)="expandir()" *ngIf="ex == false">
             <img src="../assets/icons/analise-de-dados.png" alt="" /> Relatórios
-            <div (click)="expandir()" class="expandir" *ngIf="ex == false">
+            <div class="expandir">
               <img
               src="../assets/icons/next.png"
               alt=""
               />
             </div>
-            <div (click)="fechar()" class="expandir" *ngIf="ex == true">
+          </li>
+          <li (click)="fechar()" *ngIf="ex == true">
+            <img src="../assets/icons/analise-de-dados.png" alt="" /> Relatórios
+            <div class="expandir">
               <img
               src="../assets/icons/down-arrow.png"
               alt=""
