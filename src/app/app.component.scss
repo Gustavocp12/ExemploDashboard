@@ -27,7 +27,7 @@ main{
   font-weight: 800;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: 5px;
   width: 220px;
 }
 
@@ -95,7 +95,7 @@ ul img{
 }
 
 .logo img{
-  width: 50px;
+  width: 30px;
 }
 
 .abrir{
@@ -138,4 +138,107 @@ ul img{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container{
+  position: absolute;
+  left: 220px;
+  top: 70px;
+  width: calc(100% - 230px);
+  height: calc(100vh - 80px);
+}
+
+.card-trabalhados, .card-fechados, .card-recusados, .card-desabitados{
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px 0px #d9d9d9;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+
+.card-trabalhados p:nth-child(1), .card-fechados p:nth-child(1), .card-recusados p:nth-child(1), .card-desabitados p:nth-child(1){
+  font-size: 12pt;
+  font-weight: 700;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.card-trabalhados p:nth-child(1)::after, .card-fechados p:nth-child(1)::after, .card-recusados p:nth-child(1)::after, .card-desabitados p:nth-child(1)::after{
+  content: "";
+  border: 1px solid #aec4ee;
+  width: 100%;
+  display: flex;
+}
+
+.card-fechados p:nth-child(1)::after{
+  border: 1px solid #47ead1;
+}
+
+.card-recusados p:nth-child(1)::after{
+  border: 1px solid #99e7a2;
+}
+
+.card-desabitados p:nth-child(1)::after{
+  border: 1px solid #ee9188;
+}
+
+.card-trabalhados p:nth-child(2), .card-fechados p:nth-child(2), .card-recusados p:nth-child(2), .card-desabitados p:nth-child(2){
+  font-size: 30pt;
+  font-weight: 700;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.chart{
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.graphic{
+  border: 1px solid #FFFFFF;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 0px #d9d9d9;
+  padding: 5px;
+}
+
+.graphic img{
+  position: absolute;
+  width: 20px;
+  top: 10px;
+  margin-left: 10px;
+}
+
+.ball, .ball2{
+  position: absolute;
+  top: 190px;
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #aec4ee;
+}
+
+.ball2{
+  background-color: #f5e7b1;
+}
+
+.cards{
+  display: flex;
 }

@@ -8,12 +8,13 @@ import * as ApexCharts from 'apexcharts';
 })
 export class AppComponent implements OnInit {
   title = 'DashboardIniciacao';
-
   ex = false;
   modo = true;
 
   apexDefaults = {
     chart: {
+      type: 'area',
+      width: 400,
       animations: {
         enabled: true,
         easing: 'easeinout',
@@ -26,8 +27,22 @@ export class AppComponent implements OnInit {
           enabled: true,
           speed: 350
         }
+      },
+      toolbar: {
+        show: true,
+        offsetX: 0,
+        offsetY: 0,
+        tools: {
+          download: true,
+          selection: false,
+          zoom: false,
+          zoomin: false,
+          zoomout: false,
+          pan: false,
+          reset: false,
+        }
       }
-    }
+    },
   };
 
   chart: ApexCharts | undefined;
@@ -43,17 +58,71 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    this.chart = new ApexCharts(document.querySelector('#chart'), {
+    this.chart = new ApexCharts(document.querySelector("#chart"), {
       ...this.apexDefaults,
+      series: [
+        {
+          name: "Series 1",
+          data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
+        },
+      ],
+      xaxis: {
+        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"],
+      },
+      title: {
+        text: "Imóveis trabalhados com notificação",
+        align: "center",
+        style: {
+          fontSize: "18px",
+          fontWeight: "bold",
+        },
+      },
+      fill: {
+        type: "gradient",
+        gradient: {
+          shadeIntensity: 1,
+          opacityFrom: 0.7,
+          opacityTo: 0.9,
+          stops: [0, 90, 100],
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+    });
+    this.chart.render();
+
+    this.chart = new ApexCharts(document.querySelector('#chart2'), {
+      ...this.apexDefaults,
+      chart: {
+        type: 'bar',
+        width: 400,
+      },
       series: [{
         name: 'Series 1',
         data: [30, 40, 35, 50, 49, 60, 70, 91, 125]
       }],
       xaxis: {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
-      }
-    });
+      },
+      title: {
+        text: 'Imóveis trabalhados',
+        align: 'center',
+        style: {
+          fontSize: '18px',
+          fontWeight: 'bold'
+        },
 
+      },
+      theme: {
+        monochrome: {
+          enabled: true,
+          color: '#255aee',
+          shadeTo: 'light',
+          shadeIntensity: 1
+        }
+      },
+    });
     this.chart.render();
   }
 
